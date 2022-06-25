@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslatorServiceService } from '../translator-service.service';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-translator-page',
@@ -13,10 +15,8 @@ export class TranslatorPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick() {
-    this.translator.getStuff().subscribe((result: string) => {
-      this.result = result;
-    })
+  onSubmit(form: NgForm) {
+    form.controls['english-text'].setValue('');
   }
 
 }

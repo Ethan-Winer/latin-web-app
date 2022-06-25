@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <input type="text" name="text" ngModel>
+  <button type="submit">Translate</button>
+</form>
+<h3 *ngFor="let translation of translations; let i = index">{{translation + i}}</h3>
+

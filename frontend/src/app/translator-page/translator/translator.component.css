@@ -1,0 +1,17 @@
+input,
+button {
+  margin: 5px;
+}
+
+input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  transition: outline 200ms;
+  outline: 2px solid rgba(150, 100, 255, 0);
+}
+
+input:focus {
+  outline: 2px solid rgba(150, 100, 255, 1)
+}

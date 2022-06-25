@@ -1,0 +1,9 @@
+.half-screen-container {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+h1 {
+  margin: 20px 0px;
+}

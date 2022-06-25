@@ -1,0 +1,43 @@
+div {
+  width: calc(100vw - 60px);
+}
+
+img {
+  height: 70px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  float: right;
+  /* margin-right: 40px; */
+  list-style: none;
+  text-align: center;
+  display: inline-block;
+}
+
+li {
+  /* height: 60px; */
+  /* width: 100px; */
+  margin: 10px 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: border-bottom 450ms;
+  /* border-bottom: 3px solid rgba(204, 163, 228, 0); */
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+
+
+li:hover {
+  border-bottom: 3px solid rgba(255, 255, 255, 1);
+}
+
+.active {
+  color: rgba(150, 100, 255, 1);
+}

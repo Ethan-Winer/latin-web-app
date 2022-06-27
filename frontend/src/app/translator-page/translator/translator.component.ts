@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -19,13 +20,13 @@ export class TranslatorComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     this.translator.translate(form.value['text'], this.translateFrom).subscribe(response => {
-      console.log(response['translationList'])
-      for (let translation of response['translationList']) {
-        this.translations.push(translation);
-      }
+      this.translations = this.translations.concat(response['translationList'])
     });
+    form.controls['text'].setValue('');
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.translations, event.previousIndex, event.currentIndex);
     console.log(this.translations);
-
-
   }
 }

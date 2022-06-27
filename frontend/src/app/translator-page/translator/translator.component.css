@@ -15,3 +15,26 @@ input {
 input:focus {
   outline: 2px solid rgba(150, 100, 255, 1)
 }
+
+form {
+  margin-bottom: 20px;
+}
+
+.translation-container {
+  padding: 30px;
+  display: inline-block;
+}
+
+.translation {
+  width: 500px;
+  margin: auto;
+  text-align: left;
+  padding: 15px 15px;
+  background-color: #444;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}

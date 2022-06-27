@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,6 @@ export class TranslatorServiceService {
 
   constructor(private http: HttpClient) { }
 
-  // get result(): string {
-  //   return this._result;
-  // }
-
-  // getStuff() {
-  //   return this.http.get('http://127.0.0.1:8000/test');
-  // }
   translate(formText: string, translateFrom: string) {
     var words: string[] = this.parseTextToList(formText);
     return this.get(translateFrom, words);
@@ -44,9 +37,10 @@ export class TranslatorServiceService {
   }
 
   get(translateFrom: string, words: string[]) {
-    var headers: HttpHeaders = new HttpHeaders();
-    headers.set('words', words)
-    return this.http.get('http://127.0.0.1:8000/' + translateFrom, { 'headers': headers })
+    let headers = {
+      headers: new HttpHeaders({ 'Words': words })
+    }
+    return this.http.get('/translate-' + translateFrom, headers);
   }
 
 }

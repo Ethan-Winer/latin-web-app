@@ -8,5 +8,5 @@ from translator.views import translate_english
 # router.register('test', test)
 
 urlpatterns = [
-  path('english', translate_english)
+  path('translate-english', translate_english)
 ]

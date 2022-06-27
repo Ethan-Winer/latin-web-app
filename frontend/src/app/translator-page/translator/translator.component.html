@@ -2,5 +2,11 @@
   <input type="text" name="text" ngModel>
   <button type="submit">Translate</button>
 </form>
-<h3 *ngFor="let translation of translations; let i = index">{{translation + i}}</h3>
+
+<div cdkDropList class="translation-container" (cdkDropListDropped)="drop($event)">
+  <div class="translation" 
+  cdkDragBoundary=".translation-container"
+  *ngFor="let translation of translations; let i = index"
+  cdkDrag>{{translation + ' '}}</div>
+</div>
 

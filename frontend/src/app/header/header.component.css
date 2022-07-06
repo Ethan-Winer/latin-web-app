@@ -35,9 +35,10 @@ li {
 
 
 li:hover {
-  border-bottom: 3px solid rgba(255, 255, 255, 1);
+  border-bottom: 3px solid var(--text-color);
 }
 
 .active {
-  color: rgba(150, 100, 255, 1);
+  /* color: rgba(150, 100, 255, 1); */
+  color: var(--highlight-color)
 }

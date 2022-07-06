@@ -4,6 +4,10 @@
   display: inline-block;
 }
 
+.right {
+  float: right;
+}
+
 h1 {
   margin: 20px 0px;
 }

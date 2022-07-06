@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   font-family: 'Titillium Web', sans-serif;
+  --highlight-color: #23B5D3;
+  --text-color: #D0CCD0;
 }
 
 html {
-  background-color: #222;
-  /* background-repeat: no-repeat;
-  height: 100%;
-  background-image: linear-gradient(#666, #444 #222); */
-  color: #fff;
+  background-color: #17171c;
+  /* background-color: #242431; */
+  color: var(--text-color);
 }

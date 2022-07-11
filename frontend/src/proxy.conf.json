@@ -1,10 +1,12 @@
 {
   "/translate-to-latin": {
-    "target": "http://192.168.68.124:8000",
+    "_target": "http://192.168.68.124:8000",
+    "target": "http://127.0.0.1:8000/",
     "secure": false
   },
   "/translate-to-english": {
-    "target": "http://192.168.68.124:8000",
+    "_target": "http://192.168.68.124:8000",
+    "target": "http://127.0.0.1:8000/",
     "secure": false
   }
 }

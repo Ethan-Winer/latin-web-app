@@ -15,7 +15,7 @@ export class TranslatorServiceService {
 
   translate(formText: string, translateTo: string) {
     let words: string[] = this.parseTextToList(formText);
-    this.get(translateTo, words).subscribe(response => {
+    this.post(translateTo, words).subscribe(response => {
       let translations: string[] = response['translationList']
       for (let i = 0; i < words.length; i++) {
         if (translateTo === 'latin') {
@@ -48,11 +48,18 @@ export class TranslatorServiceService {
     return words;
   }
 
-  get(translateTo: string, words: string[]) {
-    let headers = {
-      headers: new HttpHeaders({ 'Words': words })
+  post(translateTo: string, words: string[]) {
+    // let headers = {
+    //   headers: new HttpHeaders({ 'Words': words })
+    // }
+    // return this.http.post('/translate-to-' + translateTo, headers);
+    var body: string = '{"words": [';
+    for (let i = 0; i < words.length - 1; i++) {
+      body += '"' + words[i] + '",';
     }
-    return this.http.get('/translate-to-' + translateTo, headers);
+    body += '"' + words[words.length - 1] + '"]}'
+    console.log(body);
+    return this.http.post('/translate-to-' + translateTo, body);
   }
 
 }

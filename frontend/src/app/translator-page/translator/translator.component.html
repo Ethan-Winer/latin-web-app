@@ -4,13 +4,11 @@
 </form>
 
 <div cdkDropList class="translation-container" (cdkDropListDropped)="drop($event)">
-  <div class="translation" 
+   <div class="translation" 
+  [@simpleFadeAnimation]="'in'"
   cdkDragBoundary=".translation-container"
   *ngFor="let translation of translations; let i = index;"
   cdkDrag>
-    <h2>{{translation.word}}</h2>
-    <button class="destroy-button" (click)="destroyTranslation(i)">destroy</button>
-    <pre>{{translation.definition}}</pre>
+    <app-translation [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>
+  </div>
 </div>
-</div>
-

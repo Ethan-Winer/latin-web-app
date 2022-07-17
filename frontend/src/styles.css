@@ -10,4 +10,5 @@ html {
   background-color: #17171c;
   /* background-color: #242431; */
   color: var(--text-color);
+  overflow-y: scroll;
 }

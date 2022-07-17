@@ -6,7 +6,7 @@ import { Translation } from './translation.model';
   providedIn: 'root'
 })
 export class TranslatorServiceService {
-  public latinTranslations: Translation[] = [];
+  latinTranslations: Translation[] = [];
   englishTranslations: Translation[] = [];
 
   constructor(private http: HttpClient) { }
@@ -22,7 +22,8 @@ export class TranslatorServiceService {
           this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i])));
         }
         else {
-          this.englishTranslations.unshift(new Translation(words[i], translations[i]))
+          this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i])));
+
         }
       }
     });
@@ -34,7 +35,7 @@ export class TranslatorServiceService {
     for (let char of text) {
       if (char === ' ' || char === ',') {
         if (tempWord.length == 0) continue;
-        words.push(tempWord);
+        words.push(tempWord.toLowerCase());
         tempWord = '';
       }
       else {
@@ -43,7 +44,7 @@ export class TranslatorServiceService {
     }
 
     if (tempWord != '') {
-      words.push(tempWord);
+      words.push(tempWord.toLowerCase());
     }
     return words;
   }

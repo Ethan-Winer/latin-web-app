@@ -10,6 +10,8 @@ import { TranslatorPageComponent } from './translator-page/translator-page.compo
 import { HeaderComponent } from './header/header.component';
 import { GuidePageComponent } from './guide-page/guide-page.component';
 import { TranslatorComponent } from './translator-page/translator/translator.component';
+import { TranslationComponent } from './translation/translation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { TranslatorComponent } from './translator-page/translator/translator.com
     TranslatorPageComponent,
     HeaderComponent,
     GuidePageComponent,
-    TranslatorComponent
+    TranslatorComponent,
+    TranslationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

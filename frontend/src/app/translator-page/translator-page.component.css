@@ -5,7 +5,8 @@
 }
 
 .right {
-  float: right;
+  vertical-align: top;
+  /* width: calc(100% - 50vw); */
 }
 
 h1 {

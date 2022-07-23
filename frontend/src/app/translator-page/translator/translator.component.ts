@@ -7,7 +7,7 @@ import {
   transition,
   animate,
   style,
-  state
+  keyframes
 } from '@angular/animations';
 
 import { Translation } from 'src/app/translation.model';
@@ -17,21 +17,25 @@ import { Translation } from 'src/app/translation.model';
   templateUrl: './translator.component.html',
   styleUrls: ['./translator.component.css'],
   animations: [
-    // the fade-in/fade-out animation.
-    // the fade-in/fade-out animation.
-    trigger('simpleFadeAnimation', [
-
-      // the "in" style determines the "resting" state of the element when it is visible.
-
-      // fade in when created. this could also be written as transition('void => *')
+    trigger('growInOut', [
       transition(':enter', [
-        style({ opacity: 0, scale: 0.5 }),
-        animate('0.2s ease-in')
+        animate('500ms ease',
+          keyframes([
+            style({ opacity: 0, height: 0, margin: 0, scale: 0.4 }),
+            style({ height: '*', margin: '*', scale: 0.4, opacity: 0 }),
+            style({ scale: 1, opacity: 1 })
+          ]),
+        )
       ]),
-
-      // fade out when destroyed. this could also be written as transition('void => *')
-      transition(':leave',
-        animate('0.2s ease-out', style({ opacity: 0, scale: 0.5 })))
+      transition(':leave', [
+        animate('500ms ease',
+          keyframes([
+            style({ scale: 1 }),
+            style({ opacity: 0, scale: 0.4 }),
+            style({ height: 0, margin: 0 })
+          ])
+        ),
+      ])
     ])
   ]
 })

@@ -19,10 +19,10 @@ export class TranslatorServiceService {
       let translations: string[] = response['translationList']
       for (let i = 0; i < words.length; i++) {
         if (translateTo === 'latin') {
-          this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i])));
+          this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
         }
         else {
-          this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i])));
+          this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
 
         }
       }

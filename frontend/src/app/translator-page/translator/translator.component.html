@@ -5,7 +5,7 @@
 
 <div cdkDropList class="translation-container" (cdkDropListDropped)="drop($event)">
    <div class="translation" 
-  [@simpleFadeAnimation]="'in'"
+  [@growInOut]
   cdkDragBoundary=".translation-container"
   *ngFor="let translation of translations; let i = index;"
   cdkDrag>

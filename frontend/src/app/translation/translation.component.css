@@ -7,7 +7,8 @@ button {
 }
 
 .header {
-  line-height: 20px;
+  height: 30px;
+  line-height: 30px;
 }
 
 .button-container {
@@ -27,12 +28,20 @@ h2 {
   color: var(--highlight-color);
   display: inline-block;
   margin-top: 0px;
+  vertical-align: middle;
+  /* margin-left: 10px; */
+}
+
+pre {
+  /* margin: 10px; */
+  /* padding: 10px; */
 }
 
 .container {
   border-radius: 20px;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 15px;
+  /* margin-bottom: 10px; */
+  /* margin: 0px 5px; */
 }
 
 /* .translation {

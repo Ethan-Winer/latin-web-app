@@ -1,20 +1,61 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Translation } from '../translation.model';
+import {
+  trigger,
+  transition,
+  animate,
+  style,
+  keyframes,
+  state
+} from '@angular/animations';
 
 @Component({
   selector: 'app-translation',
   templateUrl: './translation.component.html',
-  styleUrls: ['./translation.component.css']
+  styleUrls: ['./translation.component.css'],
+  animations: [
+    trigger('slideUpDown', [
+      // transition(':enter', [
+      //   animate('300ms ease',
+      //     keyframes([
+      //       style({ height: 0, padding: 0 }),
+      //       style({ height: '*', padding: '*' })
+      //     ])
+      //   )
+      // ]),
+      // transition(':leave', [
+      //   animate('300ms ease',
+      //     keyframes([
+      //       style({ height: '*', padding: '*' }),
+      //       style({ height: 0, padding: 0 })
+      //     ])
+      //   )
+      // ])
+      state('open',
+        style({ height: '*', padding: '*' })
+      ),
+      state('closed',
+        style({ height: 0, padding: 0 })
+      ),
+      transition('open <=> closed', [
+        animate('300ms ease')
+      ]),
+      transition('void => closed, void => open', [
+        animate('300ms ease')
+      ])
+    ])
+  ]
 })
 export class TranslationComponent implements OnInit {
   @Input() translation: Translation;
   hovering: boolean = false;
   @Output() destroy = new EventEmitter();
-  minimized: boolean = false;
+  isOpen: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.isOpen = this.translation.isOpen;
   }
 
   emitDestroy() {

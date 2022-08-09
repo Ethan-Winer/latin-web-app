@@ -26,15 +26,19 @@ button:hover svg {
 
 h2 {
   color: var(--highlight-color);
+  font-size: 25px;
   display: inline-block;
   margin-top: 0px;
   vertical-align: middle;
   /* margin-left: 10px; */
+  font-weight: bold;
 }
 
 pre {
   /* margin: 10px; */
   /* padding: 10px; */
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .container {

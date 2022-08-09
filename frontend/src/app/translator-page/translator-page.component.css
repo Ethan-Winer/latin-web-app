@@ -1,12 +1,15 @@
 .half-screen-container {
-  width: 50%;
+  /* min-width: 610px; */
   text-align: center;
-  display: inline-block;
+  display: block;
+  vertical-align: top;
 }
 
-.right {
-  vertical-align: top;
-  /* width: calc(100% - 50vw); */
+@media (min-width: 1220px) {
+  .half-screen-container {
+    width: 50%;
+    display: inline-block;
+  }
 }
 
 h1 {

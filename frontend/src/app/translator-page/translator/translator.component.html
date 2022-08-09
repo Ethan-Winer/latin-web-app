@@ -1,5 +1,5 @@
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <input type="text" name="text" ngModel>
+  <input type="text" name="text" placeholder="{{translateTo == 'english' ? 'latin goes here' : 'english goes here'}}" ngModel>
   <button type="submit">Translate</button>
 </form>
 
@@ -9,6 +9,6 @@
   cdkDragBoundary=".translation-container"
   *ngFor="let translation of translations; let i = index;"
   cdkDrag>
-    <app-translation [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>
+    <app-translation [disableAnimations]="disableAnimations" [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>
   </div>
 </div>

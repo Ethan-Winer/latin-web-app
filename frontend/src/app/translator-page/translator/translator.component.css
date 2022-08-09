@@ -15,38 +15,37 @@ form {
   margin-bottom: 20px;
 }
 
-
 .translation-container {
   padding: 30px;
   display: inline-block;
 }
 
 .translation {
-  width: 600px;
+  width: 550px;
   margin: auto;
   margin-bottom: 10px;
   text-align: left;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
-  background-color: rgba(255, 255, 255, 0.08);
-  transition: background-color 20ms;
+  /* background-color: rgba(255, 255, 255, 0.08); */
+  background-color: rgb(41, 41, 46);
+  /* transition: background-color 100ms; */
   box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0); */
   overflow-y: hidden;
 }
 
-.translation:active,
 .cdk-drag-preview {
   background-color: #334;
-  transition: background-color 200ms;
+  transition: background-color 100ms;
   box-shadow: 0px 0px 20px rgba(20, 20, 20, 1);
 }
 
 .cdk-drag-animating {
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1), background-color 200ms, box-shadow, 200ms;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgb(41, 41, 46);
 }
 
 .translation-container.cdk-drop-list-dragging .translation:not(.cdk-drag-placeholder) {
@@ -56,7 +55,6 @@ form {
 .cdk-drag-placeholder {
   opacity: 0;
 }
-
 
 /* .destroying {
   animation-name: on-destroy;

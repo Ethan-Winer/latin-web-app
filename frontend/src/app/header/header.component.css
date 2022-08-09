@@ -1,3 +1,10 @@
+h1 {
+  display: inline-block;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
 div {
   width: calc(100vw - 60px);
 }
@@ -15,6 +22,7 @@ a:visited {
 ul {
   float: right;
   /* margin-right: 40px; */
+  margin-top: 15px;
   list-style: none;
   text-align: center;
   display: inline-block;
@@ -28,7 +36,7 @@ li {
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  transition: border-bottom 450ms;
+  transition: border-bottom 200ms;
   /* border-bottom: 3px solid rgba(204, 163, 228, 0); */
   border-bottom: 3px solid rgba(255, 255, 255, 0);
 }

@@ -25,7 +25,22 @@ export class TranslatorServiceService {
           this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
 
         }
+
       }
+      // let i = words.length - 1;
+      // setInterval(() => {
+      //   if (i < 0) {
+      //     return;
+      //   }
+      //   if (translateTo === 'latin') {
+      //     // this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+      //     this.latinTranslations.splice(0, 0, new Translation(words[i], translations[i], true));
+      //   }
+      //   else {
+      //     this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+      //   }
+      //   i--;
+      // }, 200);
     });
   }
 

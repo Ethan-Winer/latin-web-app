@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit, ChangeDetectorRef, HostBinding } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, HostBinding } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslatorServiceService } from 'src/app/translator-service.service';
 import {
@@ -47,7 +47,7 @@ export class TranslatorComponent implements OnInit {
   translations: Translation[];
   disableAnimations: boolean = false;
 
-  constructor(private translator: TranslatorServiceService, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private translator: TranslatorServiceService) { }
 
   ngOnInit(): void {
     if (this.translateTo === 'latin') {
@@ -56,9 +56,13 @@ export class TranslatorComponent implements OnInit {
     else {
       this.translations = this.translator.englishTranslations;
     }
-    setTimeout(() => {
-      this.disabled = false;
-    }, 510);
+    // setTimeout(() => {
+    //   this.disabled = false;
+    // }, 200);
+  }
+
+  ngAfterViewInit(): void {
+    this.disabled = false;
   }
 
   onSubmit(form: NgForm): void {

@@ -55,27 +55,18 @@ form {
   opacity: 0;
 }
 
-/* .destroying {
-  animation-name: on-destroy;
-  animation-duration: 320ms;
+@media screen and (max-height: 720px) {
+  input {
+    width: 120px;
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+
+  .translation {
+    width: 500px;
+    border-radius: 15px;
+  }
 }
-
-@keyframes on-destroy {
-
-  45% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-
-  90%,
-  100% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-
-} */
-
-/* 
-.shifting {
-  background-color: green;
-} */

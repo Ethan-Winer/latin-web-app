@@ -6,7 +6,7 @@ h1 {
 }
 
 div {
-  width: calc(100vw - 60px);
+  width: calc(100vw - 20px);
   display: block;
 }
 
@@ -26,7 +26,20 @@ ul {
   margin-top: 15px;
   list-style: none;
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
+  /* display: inline-block; */
+  /* display: block; */
+}
+
+@media (max-width: 800px) {
+  ul {
+    float: none;
+  }
+
+  h1 {
+    display: block;
+    text-align: center;
+  }
 }
 
 li {
@@ -50,4 +63,24 @@ li:hover {
 .active {
   /* color: rgba(150, 100, 255, 1); */
   color: var(--highlight-color)
+}
+
+@media screen and (max-height: 720px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  ul {
+    margin-top: 5px;
+  }
+
+  li {
+    margin: 5px 15px;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+  }
+
+  li:hover {
+    border-bottom: 2px solid var(--text-color);
+  }
 }

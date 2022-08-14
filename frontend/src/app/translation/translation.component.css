@@ -37,8 +37,8 @@ h2 {
 pre {
   /* margin: 10px; */
   /* padding: 10px; */
-  /* font-size: 16px; */
-  font-size: 2vh;
+  font-size: 16px;
+  /* font-size: 1.8vh; */
   font-weight: 600;
   /* display: inline; */
   max-width: 600px;
@@ -54,6 +54,36 @@ pre {
   padding: 15px;
   /* margin-bottom: 10px; */
   /* margin: 0px 5px; */
+}
+
+@media (max-height: 720px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  button {
+    margin-left: 12px;
+  }
+
+  .header {
+    line-height: 22px;
+  }
+
+  svg {
+    height: 18px;
+  }
+
+  pre {
+    font-size: 13px;
+    max-width: 500px;
+    line-height: 14px;
+  }
+
+  .container {
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 10px;
+  }
 }
 
 /* .translation {

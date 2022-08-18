@@ -50,14 +50,14 @@ li {
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  transition: border-bottom 200ms;
+  transition: border-bottom 150ms;
   /* border-bottom: 3px solid rgba(204, 163, 228, 0); */
-  border-bottom: 3px solid rgba(255, 255, 255, 0);
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 
 
 li:hover {
-  border-bottom: 3px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
 }
 
 .active {

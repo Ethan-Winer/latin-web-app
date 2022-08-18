@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit, AfterViewInit, HostBinding } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslatorServiceService } from 'src/app/translator-service.service';
 import {
@@ -45,7 +45,7 @@ export class TranslatorComponent implements OnInit {
   @Input() translateTo: string;
   @Input() hovering: boolean;
   translations: Translation[];
-  disableAnimations: boolean = false;
+  // disableAnimations: boolean = false;
 
   constructor(private translator: TranslatorServiceService) { }
 
@@ -61,7 +61,7 @@ export class TranslatorComponent implements OnInit {
     // }, 200);
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewChecked(): void {
     this.disabled = false;
   }
 

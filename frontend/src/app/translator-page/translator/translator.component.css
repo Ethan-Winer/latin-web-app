@@ -1,6 +1,17 @@
 input {
+  font-size: 14px;
   margin: 5px;
   background-color: var(--text-color);
+}
+
+button {
+  /* padding: 1px; */
+
+  font-size: 14px;
+  padding: 0px 2px;
+  border-radius: 8px;
+  background-color: var(--text-color);
+  cursor: pointer;
 }
 
 input {
@@ -11,12 +22,9 @@ input {
   font-weight: bolder;
 }
 
-form {
-  margin-bottom: 20px;
-}
-
 .translation-container {
-  display: inline-block;
+  /* display: inline-block; */
+  display: block;
 }
 
 .translation {
@@ -34,6 +42,7 @@ form {
   border-radius: 20px;
   /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0); */
   overflow-y: hidden;
+  margin-top: 15px;
 }
 
 .cdk-drag-preview {

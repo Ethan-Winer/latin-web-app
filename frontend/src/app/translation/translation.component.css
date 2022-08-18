@@ -1,9 +1,9 @@
 button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  margin: none;
   vertical-align: middle;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .header {
@@ -28,7 +28,7 @@ h2 {
   color: var(--highlight-color);
   font-size: 25px;
   display: inline-block;
-  margin-top: 0px;
+  /* margin-top: 0px; */
   vertical-align: middle;
   /* margin-left: 10px; */
   font-weight: bold;
@@ -53,7 +53,7 @@ pre {
   border-radius: 20px;
   padding: 15px;
   /* margin-bottom: 10px; */
-  /* margin: 0px 5px; */
+  margin: 0px 5px;
 }
 
 @media (max-height: 720px) {
@@ -82,7 +82,7 @@ pre {
   .container {
     max-width: 500px;
     border-radius: 10px;
-    padding: 10px;
+    /* padding: 10px; */
   }
 }
 

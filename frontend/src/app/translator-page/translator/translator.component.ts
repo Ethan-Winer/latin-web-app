@@ -12,6 +12,9 @@ import {
 
 import { Translation } from 'src/app/translation.model';
 
+import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-translator',
   templateUrl: './translator.component.html',
@@ -45,7 +48,8 @@ export class TranslatorComponent implements OnInit {
   @Input() translateTo: string;
   @Input() hovering: boolean;
   translations: Translation[];
-  // disableAnimations: boolean = false;
+  text: string;
+  goodInput: boolean = false;
 
   constructor(private translator: TranslatorServiceService) { }
 
@@ -56,9 +60,7 @@ export class TranslatorComponent implements OnInit {
     else {
       this.translations = this.translator.englishTranslations;
     }
-    // setTimeout(() => {
-    //   this.disabled = false;
-    // }, 200);
+
   }
 
   ngAfterViewChecked(): void {
@@ -66,9 +68,16 @@ export class TranslatorComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
+    let text: string = form.value['text'];
     this.translator.translate(form.value['text'], this.translateTo)
     form.controls['text'].setValue('');
   }
+
+  checkForValidInput(text: string) {
+    // this.badInput = /^[a-zA-Z\s.,]+$/.test(text);
+    // console.log(this.badInput);
+  }
+
 
   destroyTranslation(index: number): void {
     this.translations.splice(index, 1);
@@ -77,5 +86,4 @@ export class TranslatorComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.translations, event.previousIndex, event.currentIndex);
   }
-
 }

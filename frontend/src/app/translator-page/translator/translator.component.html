@@ -1,12 +1,14 @@
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <input type="text" name="text" placeholder="{{translateTo == 'english' ? 'latin goes here' : 'english goes here'}}" ngModel>
   <button type="submit">Translate</button>
+  <!-- <h3 *ngif="checkForValidInput(text)">bad input</h3> -->
+  <h3 *ngIf="goodInput"></h3>
 </form>
 
 <div cdkDropList class="translation-container" (cdkDropListDropped)="drop($event)">
    <div class="translation" 
   [@growInOut]
-  cdkDragBoundary=".translation-container"
+  cdkDragBoundary=".half-screen-container"
   *ngFor="let translation of translations; let i = index;"
   cdkDrag>
     <app-translation  [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>

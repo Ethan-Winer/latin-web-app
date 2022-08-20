@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: nginx:1.18.0
+    container_name: reverse-proxy
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./reverse-proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+  frontend:
+    image: frontend
+    container_name: frontend
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - 8080:80
+    restart: on-failure
+
+  backend:
+    image: backend
+    container_name: backend
+    build:
+      context: ./backend
+    ports:
+      - 5000:5000
+    restart: on-failure

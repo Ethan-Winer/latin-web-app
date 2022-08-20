@@ -8,10 +8,15 @@ button {
   /* padding: 1px; */
 
   font-size: 14px;
-  padding: 0px 2px;
+  padding: 2px;
   border-radius: 8px;
   background-color: var(--text-color);
   cursor: pointer;
+  border: none;
+}
+
+button:active {
+  background-color: #aaa;
 }
 
 input {

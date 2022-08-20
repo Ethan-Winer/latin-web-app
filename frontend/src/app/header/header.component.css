@@ -50,7 +50,7 @@ li {
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  transition: border-bottom 150ms;
+  transition: border-bottom 100ms;
   /* border-bottom: 3px solid rgba(204, 163, 228, 0); */
   border-bottom: 2px solid rgba(255, 255, 255, 0);
 }

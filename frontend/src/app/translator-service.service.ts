@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
 import { Translation } from './translation.model';
 
+import { BehaviorSubject, Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,6 @@ export class TranslatorServiceService {
   englishTranslations: Translation[] = [];
 
   constructor(private http: HttpClient) { }
-
 
 
   translate(formText: string, translateTo: string) {
@@ -50,7 +51,8 @@ export class TranslatorServiceService {
     for (let char of text) {
       if (char === ' ' || char === ',') {
         if (tempWord.length == 0) continue;
-        words.push(tempWord.toLowerCase());
+        // words.push(tempWord.toLowerCase());
+        words.push(tempWord)
         tempWord = '';
       }
       else {
@@ -59,16 +61,13 @@ export class TranslatorServiceService {
     }
 
     if (tempWord != '') {
-      words.push(tempWord.toLowerCase());
+      // words.push(tempWord.toLowerCase());
+      words.push(tempWord)
     }
     return words;
   }
 
   post(translateTo: string, words: string[]) {
-    // let headers = {
-    //   headers: new HttpHeaders({ 'Words': words })
-    // }
-    // return this.http.post('/translate-to-' + translateTo, headers);
     var body: string = '{"words": [';
     for (let i = 0; i < words.length - 1; i++) {
       body += '"' + words[i] + '",';

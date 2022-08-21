@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http'
-import { Translation } from './translation.model';
+import { HttpClient } from '@angular/common/http';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Translation } from './translation/translation.model'
 
 @Injectable({
   providedIn: 'root'
 })
-export class TranslatorServiceService {
-  latinTranslations: Translation[] = [];
+export class TranslateService {
+  latinTranslations: Translation[] = [new Translation('this is a test', 'this is another test', true)];
   englishTranslations: Translation[] = [];
 
   constructor(private http: HttpClient) { }

@@ -31,7 +31,7 @@ ul {
   /* display: block; */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   ul {
     float: none;
   }
@@ -51,6 +51,7 @@ li {
   display: inline-block;
   box-sizing: border-box;
   transition: border-bottom 100ms;
+  text-align: center;
   /* border-bottom: 3px solid rgba(204, 163, 228, 0); */
   border-bottom: 2px solid rgba(255, 255, 255, 0);
 }

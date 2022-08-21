@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Translation } from '../translation.model';
+import { Translation } from './translation.model';
 import {
   trigger,
   transition,

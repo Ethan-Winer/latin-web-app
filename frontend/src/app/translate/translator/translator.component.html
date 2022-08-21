@@ -11,6 +11,6 @@
   cdkDragBoundary=".half-screen-container"
   *ngFor="let translation of translations; let i = index;"
   cdkDrag>
-    <app-translation  [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>
+    <app-translation [translation]="translation"(destroy)="destroyTranslation(i)" ></app-translation>
   </div>
 </div>

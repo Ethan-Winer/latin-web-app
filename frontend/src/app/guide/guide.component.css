@@ -1,0 +1,21 @@
+h1 {
+  display: inline-block;
+  padding-right: 20px;
+  font-size: 35px;
+  line-height: 40px;
+  border-bottom: 2px solid var(--highlight-color)
+}
+
+p {
+  font-size: 18px;
+}
+
+ul {
+  padding-left: 40px;
+}
+
+.container {
+  padding-top: 30px;
+  width: 80vw;
+  margin: auto;
+}

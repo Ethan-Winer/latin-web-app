@@ -5,6 +5,7 @@
   /* font-family: sans-serif; */
   --highlight-color: #23B5D3;
   --text-color: #D0CCD0;
+  font-weight: 700;
 }
 
 html {

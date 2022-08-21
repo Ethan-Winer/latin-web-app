@@ -1,7 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit, HostBinding } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { TranslatorServiceService } from 'src/app/translator-service.service';
+import { TranslateService } from '../translate.service';
 import {
   trigger,
   transition,
@@ -10,7 +10,7 @@ import {
   keyframes
 } from '@angular/animations';
 
-import { Translation } from 'src/app/translation.model';
+import { Translation } from '../translation/translation.model';
 
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
@@ -51,7 +51,7 @@ export class TranslatorComponent implements OnInit {
   text: string;
   goodInput: boolean = false;
 
-  constructor(private translator: TranslatorServiceService) { }
+  constructor(private translator: TranslateService) { }
 
   ngOnInit(): void {
     if (this.translateTo === 'latin') {
@@ -72,12 +72,6 @@ export class TranslatorComponent implements OnInit {
     this.translator.translate(form.value['text'], this.translateTo)
     form.controls['text'].setValue('');
   }
-
-  checkForValidInput(text: string) {
-    // this.badInput = /^[a-zA-Z\s.,]+$/.test(text);
-    // console.log(this.badInput);
-  }
-
 
   destroyTranslation(index: number): void {
     this.translations.splice(index, 1);

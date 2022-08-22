@@ -7,7 +7,7 @@ import { Translation } from './translation/translation.model'
   providedIn: 'root'
 })
 export class TranslateService {
-  latinTranslations: Translation[] = [new Translation('this is a test', 'this is another test', true)];
+  latinTranslations: Translation[] = [];
   englishTranslations: Translation[] = [];
 
   constructor(private http: HttpClient) { }

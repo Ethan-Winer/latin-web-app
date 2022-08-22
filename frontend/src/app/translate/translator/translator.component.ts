@@ -48,8 +48,8 @@ export class TranslatorComponent implements OnInit {
   @Input() translateTo: string;
   @Input() hovering: boolean;
   translations: Translation[];
-  text: string;
-  goodInput: boolean = false;
+  inputText: string;
+  invalidInput: boolean = false;
 
   constructor(private translator: TranslateService) { }
 
@@ -79,5 +79,12 @@ export class TranslatorComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.translations, event.previousIndex, event.currentIndex);
+  }
+
+  check() {
+    // if (this.text.length > 0 && !/^[A-Za-z\s,]+$/.test(this.text)) {
+    //   this.inputHasInvalidChar = true;
+    // }
+    this.invalidInput = this.inputText.length > 0 && !/^[A-Za-z\s,]+$/.test(this.inputText)
   }
 }

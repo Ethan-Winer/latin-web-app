@@ -30,8 +30,9 @@ h2 {
   display: inline-block;
   /* margin-top: 0px; */
   vertical-align: middle;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   /* margin-left: 10px; */
-  font-weight: bold;
+  /* font-weight: 400; */
 }
 
 pre {
@@ -39,10 +40,10 @@ pre {
   /* padding: 10px; */
   font-size: 16px;
   /* font-size: 1.8vh; */
-  font-weight: 600;
+  /* font-weight: 600; */
   /* display: inline; */
   max-width: 600px;
-
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   overflow-wrap: break-word;
   white-space: pre-wrap;
 }

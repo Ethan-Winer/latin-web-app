@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   font-family: 'Titillium Web', sans-serif;
-  /* font-family: sans-serif; */
+  /* font-family: Tahoma; */
+  font-weight: 300;
+  /* font-family: 'Abel'; */
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   --highlight-color: #23B5D3;
   --text-color: #D0CCD0;
-  font-weight: 700;
+  /* font-weight: 700; */
+
+
 }
 
 html {

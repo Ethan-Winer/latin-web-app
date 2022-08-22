@@ -2,8 +2,10 @@ h1 {
   display: inline-block;
   padding-right: 20px;
   font-size: 35px;
+  margin-bottom: 10px;
   line-height: 40px;
-  border-bottom: 2px solid var(--highlight-color)
+  border-bottom: 2px solid var(--highlight-color);
+
 }
 
 p {

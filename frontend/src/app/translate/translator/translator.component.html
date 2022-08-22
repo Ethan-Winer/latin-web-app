@@ -1,8 +1,7 @@
 <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <input type="text" name="text" placeholder="{{translateTo == 'english' ? 'latin goes here' : 'english goes here'}}" ngModel>
-  <button type="submit">Translate</button>
-  <!-- <h3 *ngif="checkForValidInput(text)">bad input</h3> -->
-  <h3 *ngIf="goodInput"></h3>
+  <input (input)="check()" type="text" name="text" placeholder="{{translateTo == 'english' ? 'latin goes here' : 'english goes here'}}" [(ngModel)]="inputText">
+  <button type="submit" [disabled]="invalidInput">Translate</button>
+  <p *ngIf="invalidInput">only letters, spaces, and commas are allowed</p>
 </form>
 
 <div cdkDropList class="translation-container" (cdkDropListDropped)="drop($event)">

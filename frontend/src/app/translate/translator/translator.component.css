@@ -5,18 +5,21 @@ input {
 }
 
 button {
-  /* padding: 1px; */
-
-  font-size: 14px;
+  /* font-size: 14px;
   padding: 2px;
-  border-radius: 8px;
-  background-color: var(--text-color);
-  cursor: pointer;
+  border-radius: 6px;
   border: none;
+  background-color: var(--text-color); */
+  cursor: pointer;
 }
 
+/* 
 button:active {
   background-color: #aaa;
+} */
+
+form {
+  min-height: 60px;
 }
 
 input {
@@ -25,6 +28,11 @@ input {
   border-radius: 5px;
   padding: 2px 5px;
   font-weight: bolder;
+}
+
+p {
+  font-size: 16px;
+  color: #FF5A5F;
 }
 
 .translation-container {

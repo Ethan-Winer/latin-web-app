@@ -7,8 +7,12 @@ button {
 }
 
 .header {
-  height: 30px;
+  /* min-height: 30px; */
   line-height: 30px;
+  margin: 0px 10px;
+  /* padding: 10px; */
+  vertical-align: middle;
+  margin-top: 15px;
 }
 
 .button-container {
@@ -28,7 +32,6 @@ h2 {
   color: var(--highlight-color);
   font-size: 25px;
   display: inline-block;
-  /* margin-top: 0px; */
   vertical-align: middle;
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   /* margin-left: 10px; */
@@ -37,6 +40,7 @@ h2 {
 
 pre {
   /* margin: 10px; */
+  margin: 0px 10px 10px 10px;
   /* padding: 10px; */
   font-size: 16px;
   /* font-size: 1.8vh; */
@@ -46,15 +50,17 @@ pre {
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   overflow-wrap: break-word;
   white-space: pre-wrap;
+  overflow-y: hidden;
+  transition: height 300ms ease-in-out;
 }
 
 .container {
   max-width: 600px;
 
   border-radius: 20px;
-  padding: 10px;
-  /* margin-bottom: 10px; */
-  margin: 0px 5px;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  /* margin: 0px 5px; */
 }
 
 @media (max-height: 720px) {

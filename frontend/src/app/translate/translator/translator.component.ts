@@ -33,7 +33,7 @@ import { Observable } from 'rxjs';
       transition(':leave', [
         animate('500ms ease',
           keyframes([
-            style({ transform: 'scale(1)' }),
+            style({ transform: 'scale(1)', margin: '*' }),
             style({ opacity: 0, transform: 'scale(0.4)' }),
             style({ height: 0, margin: 0 })
           ])

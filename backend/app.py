@@ -22,8 +22,6 @@ app = Flask(__name__)
 @app.route('/translate-to-latin', methods=['POST'])
 def translate_to_latin():
   data = json.loads(request.get_data())
-  # data = request.get_data()
-  # if check_for_valid_request(data):
   translations = []
   for word in data ['words']:
     if not word.isalpha():
@@ -31,14 +29,10 @@ def translate_to_latin():
     translation= subprocess.getoutput('./words ~E ' + word)
     translations.append(translation)
   return jsonify({'translationList': translations})
-  # else:
-  #   return 'bad request'
 
 @app.route('/translate-to-english', methods=['POST'])
 def translate_to_english():
   data = json.loads(request.get_data())
-  # data = request.get_data()
-  # if check_for_valid_request(data):
   translations=[]
   for word in data['words']:
     if not word.isalpha():
@@ -46,11 +40,6 @@ def translate_to_english():
     translation = subprocess.getoutput('./words ' + word)
     translations.append(translation)
   return jsonify({'translationList': translations})
-  # else:
-  #   return 'bad request'
-
-
-
 
 if __name__ == "__main__":  
   port = int(os.environ.get('PORT', 5000))

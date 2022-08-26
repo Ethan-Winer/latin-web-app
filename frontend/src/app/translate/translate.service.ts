@@ -9,40 +9,45 @@ import { Translation } from './translation/translation.model'
 export class TranslateService {
   latinTranslations: Translation[] = [];
   englishTranslations: Translation[] = [];
+  // englishTranslations: Translation[] = [new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true), new Translation('test', 'testdfjslka;;;;;;;;;;;;;;;;;;;;;;;;;;jfklsdajfklsdjfkl;wsanml;nkl;dasjkejfpkwajopqwfjkoewpqkmsa;n', true),];
 
   constructor(private http: HttpClient) { }
 
 
   translate(formText: string, translateTo: string) {
     let words: string[] = this.parseTextToList(formText);
-    this.post(translateTo, words).subscribe(response => {
-      let translations: string[] = response['translationList']
-      for (let i = 0; i < words.length; i++) {
-        if (translateTo === 'latin') {
-          this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-        }
-        else {
-          this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+    if (words.length > 0) {
+      this.post(translateTo, words).subscribe(response => {
+        let translations: string[] = response['translationList']
+        for (let i = 0; i < words.length; i++) {
+          if (translateTo === 'latin') {
+            this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+          }
+          else {
+            this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+
+          }
 
         }
 
-      }
-      // let i = words.length - 1;
-      // setInterval(() => {
-      //   if (i < 0) {
-      //     return;
-      //   }
-      //   if (translateTo === 'latin') {
-      //     // this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-      //     this.latinTranslations.splice(0, 0, new Translation(words[i], translations[i], true));
-      //   }
-      //   else {
-      //     this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-      //   }
-      //   i--;
-      // }, 200);
-    });
+        // let i = words.length - 1;
+        // setInterval(() => {
+        //   if (i < 0) {
+        //     return;
+        //   }
+        //   if (translateTo === 'latin') {
+        //     // this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+        //     this.latinTranslations.splice(0, 0, new Translation(words[i], translations[i], true));
+        //   }
+        //   else {
+        //     this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
+        //   }
+        //   i--;
+        // }, 200);
+      });
+    }
   }
+
 
   parseTextToList(text: string): string[] {
     var words: string[] = [];

@@ -15,7 +15,6 @@
       </button>
     </div>
   </div>
-  <!-- <pre [@slideUpDown]="isOpen ? 'open' : 'closed'">{{translation.definition}}</pre> -->
-  <pre *ngIf="translation.isOpen">{{translation.definition}}</pre>
+  <pre #definition [ngStyle]="{'height': translation.isOpen ? this.defHeight + 'px' :'0px'}">{{translation.definition}}</pre>
 </div>
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, HostBinding, ViewChild, ElementRef } from '@angular/core';
 import { Translation } from './translation.model';
 import {
   trigger,
@@ -13,24 +13,26 @@ import {
   selector: 'app-translation',
   templateUrl: './translation.component.html',
   styleUrls: ['./translation.component.css'],
-  // animations: [
-  //   trigger('slideUpDown', [
-  //     transition(':enter', [
-  //       animate('300ms ease',
-  //         keyframes([
-  //           style({ height: 0, padding: 0 }),
-  //           style({ height: '*', padding: '*' })
-  //         ])
-  //       )
-  //     ]),
-  //     transition(':leave', [
-  //       animate('300ms ease',
-  //         keyframes([
-  //           style({ height: '*', padding: '*' }),
-  //           style({ height: 0, padding: 0 })
-  //         ])
-  //       )
-  //     ])
+  animations: [
+    trigger('slideUpDown', [
+      transition(':enter', [
+        animate('300ms ease',
+          keyframes([
+            style({ height: 0, marginBottom: 0 }),
+            style({ height: '*', marginBottom: '*' })
+          ])
+        )
+      ]),
+      transition(':leave', [
+        animate('300ms ease',
+          keyframes([
+            style({ height: '*', marginTop: '*' }),
+            style({ height: 0, marginTop: 0 })
+          ])
+        )
+      ])
+    ])
+  ]
   //     //     state('open',
   //     //       style({ height: '*' })
   //     //     ),
@@ -56,20 +58,27 @@ import {
   //     //         ])
   //     //       )
   //     //     ])
-  //   ])
-  // ]
+
+
 })
 export class TranslationComponent implements OnInit {
   @Input() disableAnimations: boolean;
   @Input() translation: Translation;
+  @HostBinding('@.disabled')
+  disabled = false;
   hovering: boolean = false;
   @Output() destroy = new EventEmitter();
   isOpen: boolean = true;
+  defHeight: number;
+  @ViewChild('definition') definition: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.isOpen = this.translation.isOpen;
+  }
+
+  ngAfterViewInit(): void {
+    this.defHeight = this.definition.nativeElement.offsetHeight;
   }
 
   emitDestroy() {

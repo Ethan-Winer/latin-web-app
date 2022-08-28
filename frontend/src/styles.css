@@ -9,19 +9,26 @@
   font-weight: 300;
   /* font-family: 'Abel'; */
   /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-  --highlight-color: #23B5D3;
-  --text-color: #D0CCD0;
+  /* --highlight-color: #23B5D3; */
+  /* --text-color: #D0CCD0; */
+  --text-color: #F9F5FF;
+  --highlight-color: #998FC7;
   /* font-weight: 700; */
+
 
 
 }
 
 html {
-  background-color: #17171c;
+  /* background-color: #17171c; */
+  background-color: #28262C;
   /* background-color: #242431; */
   color: var(--text-color);
-  overflow-y: scroll;
-  /* background-image: url('/assets/background.jpg'); */
+  /* overflow-y: scroll; */
+  /* background-image: linear-gradient(to bottom, #19191e, #17171c); */
+  /* background-repeat: no-repeat; */
+  /* max-height: 100vh */
+  overflow-x: hidden;
 }
 
 body {}

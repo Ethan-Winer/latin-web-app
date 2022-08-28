@@ -17,7 +17,10 @@ ul {
 }
 
 .container {
-  padding-top: 30px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   width: 80vw;
   margin: auto;
+  background-color: #3e3c42;
 }

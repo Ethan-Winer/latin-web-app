@@ -17,8 +17,9 @@ h1 {
 }
 
 .container {
-  width: calc(100vw - 40px);
-  margin-left: 20px;
+  /* width: calc(100vw - 40px);
+  margin-left: 20px; */
+  margin-bottom: 50px;
 }
 
 @media (max-height: 720px) {

@@ -2,6 +2,11 @@ input {
   font-size: 14px;
   margin: 5px;
   background-color: var(--text-color);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-weight: bolder;
 }
 
 button {
@@ -10,7 +15,18 @@ button {
   border-radius: 6px;
   border: none;
   background-color: var(--text-color); */
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 2px 5px;
   cursor: pointer;
+  /* background-color: #3e3c42;
+  color: var(--text-color); */
+  outline: none;
+  border: none;
+}
+
+p {
+  color: #BC3908;
 }
 
 /* 
@@ -18,17 +34,17 @@ button:active {
   background-color: #aaa;
 } */
 
-form {
+/* form {
   min-height: 60px;
-}
+} */
 
-input {
+/* input {
   outline: none;
   border: none;
   border-radius: 5px;
   padding: 2px 5px;
   font-weight: bolder;
-}
+} */
 
 .translation-container {
   /* display: inline-block; */
@@ -37,34 +53,36 @@ input {
 
 .translation {
   width: 600px;
+  max-width: 80vw;
   margin: auto;
   /* margin-bottom: 10px; */
   text-align: left;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
-  background-color: rgb(41, 41, 46);
+  /* background-color: rgb(41, 41, 46); */
+  background-color: #3e3c42;
   box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
-  overflow-y: hidden;
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0); */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  /* overflow-y: hidden; */
   margin-top: 15px;
 }
 
 .cdk-drag-preview {
-  background-color: #334;
-  box-shadow: 0px 0px 20px rgba(20, 20, 20, 1);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 }
 
 .cdk-drag-animating {
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1), background-color 200ms, box-shadow 200ms;
-  background-color: rgb(41, 41, 46);
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1), box-shadow 250ms;
+  /* background-color: rgb(41, 41, 46); */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 
 .translation-container.cdk-drop-list-dragging .translation:not(.cdk-drag-placeholder) {
-  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-placeholder {

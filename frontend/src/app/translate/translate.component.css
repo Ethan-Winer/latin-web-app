@@ -19,6 +19,7 @@ h1 {
 .container {
   /* width: calc(100vw - 40px);
   margin-left: 20px; */
+  width: 100vw;
   margin-bottom: 50px;
 }
 

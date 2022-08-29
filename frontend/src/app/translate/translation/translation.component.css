@@ -2,22 +2,32 @@ button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   vertical-align: middle;
-  margin-left: 15px;
+  margin-left: 10px;
+  display: inline-flex;
+  /* float: right; */
   cursor: pointer;
+
 }
 
 .header {
   min-height: 30px;
   line-height: 30px;
-  margin: 0px 10px;
-  /* padding: 10px; */
   /* vertical-align: middle; */
+  /* display: flex; */
+  /* padding: 5px 10px; */
+  /* margin: 0px 10px; */
   /* margin-top: 15px; */
 }
 
 .button-container {
   float: right;
-  display: inline-block;
+  /* right: 0; */
+  /* margin-left: calc(80%); */
+  /* display: inline-flex; */
+  /* max-height: 30px; */
+  /* line-height: 35px; */
+  /* display: inline-block; */
+  /* height: 30px; */
 }
 
 svg {
@@ -36,9 +46,11 @@ h2 {
 }
 
 pre {
+  display: block;
   /* margin: 10px; */
-  margin: 0px 10px 0px 10px;
-  /* padding: 10px; */
+  /* margin: 0px 10px; */
+  /* padding-bottom: 10px; */
+  /* margin-bottom: 10px; */
   font-size: 16px;
   /* font-size: 1.8vh; */
   /* font-weight: 600; */
@@ -53,8 +65,8 @@ pre {
 
 .container {
   /* max-width: 600px; */
-  max-width: 80vw;
-
+  /* max-width: 80vw; */
+  /* margin: 10px; */
   border-radius: 20px;
   padding: 10px;
   /* margin-bottom: 10px; */
@@ -73,6 +85,7 @@ pre {
 
   .header {
     line-height: 22px;
+    min-height: 22px;
   }
 
   svg {
@@ -88,7 +101,7 @@ pre {
   .container {
     /* max-width: 500px; */
     border-radius: 10px;
-    /* padding: 10px; */
+    padding: 7px;
   }
 }
 

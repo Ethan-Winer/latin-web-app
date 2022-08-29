@@ -12,9 +12,6 @@ import {
 
 import { Translation } from '../translation/translation.model';
 
-import { BehaviorSubject } from 'rxjs';
-import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-translator',
   templateUrl: './translator.component.html',
@@ -51,7 +48,9 @@ export class TranslatorComponent implements OnInit {
   inputText: string;
   invalidInput: boolean = false;
 
-  constructor(private translator: TranslateService) { }
+  dragging: boolean = false;
+
+  constructor(public translator: TranslateService) { }
 
   ngOnInit(): void {
     if (this.translateTo === 'latin') {
@@ -74,7 +73,11 @@ export class TranslatorComponent implements OnInit {
   }
 
   destroyTranslation(index: number): void {
+    this.translator.showTranslationButtons = false;
     this.translations.splice(index, 1);
+    //the translation button is hidden while the destroy animation is happening which is why there is a 505 ms
+    //delay. it is because of bug with float right for the buttons breaking
+    setTimeout(() => { this.translator.showTranslationButtons = true; }, 505)
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -82,9 +85,8 @@ export class TranslatorComponent implements OnInit {
   }
 
   check() {
-    // if (this.text.length > 0 && !/^[A-Za-z\s,]+$/.test(this.text)) {
-    //   this.inputHasInvalidChar = true;
-    // }
     this.invalidInput = this.inputText.length > 0 && !/^[A-Za-z\s,]+$/.test(this.inputText)
   }
+
+
 }

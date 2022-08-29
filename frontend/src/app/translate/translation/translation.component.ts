@@ -8,6 +8,7 @@ import {
   keyframes,
   state
 } from '@angular/animations';
+import { TranslateService } from '../translate.service';
 
 @Component({
   selector: 'app-translation',
@@ -66,19 +67,25 @@ export class TranslationComponent implements OnInit {
   @Input() translation: Translation;
   @HostBinding('@.disabled')
   disabled = false;
-  hovering: boolean = false;
+  @Input() hovering: boolean = false;
   @Output() destroy = new EventEmitter();
   isOpen: boolean = true;
   defHeight: number;
   @ViewChild('definition') definition: ElementRef;
 
-  constructor() { }
+  @Input() dragging: boolean = false;
+
+  placeholder;
+  constructor(public translator: TranslateService) { }
 
   ngOnInit(): void {
+    this.placeholder = this.translation.isOpen
+    this.translation.isOpen = true;
   }
 
   ngAfterViewInit(): void {
     this.defHeight = this.definition.nativeElement.offsetHeight;
+    this.translation.isOpen = this.placeholder;
   }
 
   emitDestroy() {

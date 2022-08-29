@@ -1,10 +1,11 @@
 h1 {
   display: inline-block;
   padding-right: 20px;
-  font-size: 35px;
   margin-bottom: 10px;
-  line-height: 40px;
   border-bottom: 2px solid var(--highlight-color);
+
+  font-size: 35px;
+  line-height: 40px;
 
 }
 
@@ -17,10 +18,11 @@ ul {
 }
 
 .container {
+  width: 80vw;
   padding: 30px;
+  margin: auto;
   border-radius: 15px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  width: 80vw;
-  margin: auto;
+
   background-color: #3e3c42;
 }

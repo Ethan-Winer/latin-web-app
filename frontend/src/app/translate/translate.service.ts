@@ -8,7 +8,7 @@ import { Translation } from './translation/translation.model'
 })
 export class TranslateService {
   latinTranslations: Translation[] = [];
-  englishTranslations: Translation[] = [];
+  englishTranslations: Translation[] = [new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true),];
 
   private _showTranslationButtons = true;
 
@@ -38,21 +38,6 @@ export class TranslateService {
           }
 
         }
-
-        // let i = words.length - 1;
-        // setInterval(() => {
-        //   if (i < 0) {
-        //     return;
-        //   }
-        //   if (translateTo === 'latin') {
-        //     // this.latinTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-        //     this.latinTranslations.splice(0, 0, new Translation(words[i], translations[i], true));
-        //   }
-        //   else {
-        //     this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-        //   }
-        //   i--;
-        // }, 200);
       });
     }
   }
@@ -64,7 +49,6 @@ export class TranslateService {
     for (let char of text) {
       if (char === ' ' || char === ',') {
         if (tempWord.length == 0) continue;
-        // words.push(tempWord.toLowerCase());
         words.push(tempWord)
         tempWord = '';
       }
@@ -74,7 +58,6 @@ export class TranslateService {
     }
 
     if (tempWord != '') {
-      // words.push(tempWord.toLowerCase());
       words.push(tempWord)
     }
     return words;

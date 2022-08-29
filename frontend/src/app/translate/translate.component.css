@@ -1,7 +1,5 @@
 .half-screen-container {
-  /* min-width: 610px; */
   text-align: center;
-  /* display: block; */
   vertical-align: top;
 }
 
@@ -17,8 +15,6 @@ h1 {
 }
 
 .container {
-  /* width: calc(100vw - 40px);
-  margin-left: 20px; */
   width: 100vw;
   margin-bottom: 50px;
 }
@@ -27,11 +23,4 @@ h1 {
   h1 {
     font-size: 25px;
   }
-
-  /* @media (min-width: 1100px) {
-    .half-screen-container {
-      width: 50%;
-      display: inline-block;
-    }
-  } */
 }

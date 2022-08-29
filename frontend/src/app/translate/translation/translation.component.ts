@@ -34,49 +34,19 @@ import { TranslateService } from '../translate.service';
       ])
     ])
   ]
-  //     //     state('open',
-  //     //       style({ height: '*' })
-  //     //     ),
-  //     //     state('closed',
-  //     //       style({ height: '0px' })
-  //     //     ),
-  //     //     // transition('* => open, * => closed', [
-  //     //     //   animate('300ms ease')
-  //     //     // ])
-  //     //     transition('* => open', [
-  //     //       animate('300ms ease',
-  //     //         keyframes([
-  //     //           style({ height: '0px' }),
-  //     //           style({ height: '*' })
-  //     //         ])
-  //     //       )
-  //     //     ]),
-  //     //     transition('* => closed', [
-  //     //       animate('300ms ease',
-  //     //         keyframes([
-  //     //           style({ height: '*' }),
-  //     //           style({ height: '0px' })
-  //     //         ])
-  //     //       )
-  //     //     ])
-
-
 })
+
 export class TranslationComponent implements OnInit {
-  @Input() disableAnimations: boolean;
   @Input() translation: Translation;
-  @HostBinding('@.disabled')
-  disabled = false;
   @Input() hovering: boolean = false;
   @Output() destroy = new EventEmitter();
-  isOpen: boolean = true;
-  defHeight: number;
   @ViewChild('definition') definition: ElementRef;
 
-  @Input() dragging: boolean = false;
-
-  placeholder;
-  constructor(public translator: TranslateService) { }
+  isOpen: boolean = true;
+  defHeight: number;
+  //placehoolder is temporary im gonna make an actual solution maybe
+  placeholder: boolean;
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.placeholder = this.translation.isOpen
@@ -90,5 +60,9 @@ export class TranslationComponent implements OnInit {
 
   emitDestroy() {
     this.destroy.emit();
+  }
+
+  getShowTranslationButtons() {
+    return this.translateService.showTranslationButtons;
   }
 }

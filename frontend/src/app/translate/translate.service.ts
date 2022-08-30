@@ -8,20 +8,8 @@ import { Translation } from './translation/translation.model'
 })
 export class TranslateService {
   latinTranslations: Translation[] = [];
-  englishTranslations: Translation[] = [new Translation('test', 'teaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nst', true), new Translation('test', 'test', true)];
-
-  private _showTranslationButtons = true;
-
+  englishTranslations: Translation[] = [new Translation('test', 'test', true)];
   constructor(private http: HttpClient) { }
-
-
-  public get showTranslationButtons(): boolean {
-    return this._showTranslationButtons;
-  }
-
-  public set showTranslationButtons(bool: boolean) {
-    this._showTranslationButtons = bool;
-  }
 
   translate(formText: string, translateTo: string) {
     let words: string[] = this.parseTextToList(formText);
@@ -34,14 +22,11 @@ export class TranslateService {
           }
           else {
             this.englishTranslations.splice(i, 0, (new Translation(words[i], translations[i], true)));
-
           }
-
         }
       });
     }
   }
-
 
   parseTextToList(text: string): string[] {
     var words: string[] = [];
@@ -72,5 +57,4 @@ export class TranslateService {
     console.log(body);
     return this.http.post('/translate-to-' + translateTo, body);
   }
-
 }

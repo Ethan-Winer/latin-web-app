@@ -30,7 +30,7 @@ import { Translation } from '../translation/translation.model';
       transition(':leave', [
         animate('500ms ease',
           keyframes([
-            style({ transform: 'scale(1)', margin: '*', color: 'rgba(0, 0, 0, 0)' }),
+            style({ transform: 'scale(1)', margin: '*' }),
             style({ opacity: 0, transform: 'scale(0.4)' }),
             style({ height: 0, margin: 0 })
           ])
@@ -66,17 +66,12 @@ export class TranslatorComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-    let text: string = form.value['text'];
     this.translateService.translate(form.value['text'], this.translateTo)
     form.controls['text'].setValue('');
   }
 
   destroyTranslation(index: number): void {
-    this.translateService.showTranslationButtons = false;
     this.translations.splice(index, 1);
-    //the translation button is hidden while the destroy animation is happening which is why there is a 505 ms
-    //delay. it is because of bug with float right for the buttons breaking
-    setTimeout(() => { this.translateService.showTranslationButtons = true; }, 505)
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -86,14 +81,4 @@ export class TranslatorComponent implements OnInit {
   check() {
     this.invalidInput = this.inputText.length > 0 && !/^[A-Za-z\s,]+$/.test(this.inputText)
   }
-
-  hideTranslationButtons() {
-    this.translateService.showTranslationButtons = false;
-  }
-
-  showTranslationButtions() {
-    this.translateService.showTranslationButtons = true;
-  }
-
-
 }

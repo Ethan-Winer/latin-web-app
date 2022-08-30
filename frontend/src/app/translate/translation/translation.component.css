@@ -42,12 +42,13 @@ pre {
   overflow-wrap: break-word;
   white-space: pre-wrap;
   font-size: 16px;
+
+  transition: line-height 200ms ease, color 200ms ease;
 }
 
 .container {
   border-radius: 20px;
   padding: 10px;
-  /* margin: 10px; */
 }
 
 @media (max-height: 720px) or (max-width: 500px) {

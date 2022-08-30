@@ -19,6 +19,16 @@ button {
   border-radius: 5px;
 
   font-size: 14px;
+
+  background-color: var(--text-color);
+}
+
+button:hover {
+  background-color: #e0dde6;
+}
+
+button:active {
+  background-color: #aeacb3;
 }
 
 p {

@@ -4,9 +4,6 @@ export class Translation {
     return this._word;
   }
 
-  public set definition(def: string) {
-    this._definition = def;
-  }
   public get definition() {
     return this._definition;
   }

@@ -42,8 +42,7 @@ import { Translation } from '../translation/translation.model';
 export class TranslatorComponent implements OnInit {
   @Input() translateTo: string;
   @Input() hovering: boolean;
-  @HostBinding('@.disabled')
-  disabled = true;
+  @HostBinding('@.disabled') disabled = true;
 
   translations: Translation[];
   inputText: string;

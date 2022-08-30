@@ -36,12 +36,16 @@ export class TranslationComponent implements OnInit {
   @Input() translation: Translation;
   @Input() hovering: boolean = false;
   @Output() destroy = new EventEmitter();
-
+  @HostBinding('@.disabled') disabled = true;
 
   isOpen: boolean = true;
   constructor(private translateService: TranslateService) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewChecked(): void {
+    this.disabled = false;
   }
 
   emitDestroy() {

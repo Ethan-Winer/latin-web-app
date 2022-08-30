@@ -77,13 +77,14 @@ li:hover {
   color: var(--highlight-color)
 }
 
-@media screen and (max-height: 720px) {
+@media (max-height: 720px) or (max-width: 500px) {
   h1 {
     font-size: 30px;
   }
 
   ul {
     margin-top: 5px;
+    margin-right: 0px;
   }
 
   li {

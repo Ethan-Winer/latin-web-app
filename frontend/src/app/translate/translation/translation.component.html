@@ -15,6 +15,6 @@
       </button>
     </div>
   </div>
-  <pre #definition [ngStyle]="{'height': translation.isOpen ? this.defHeight + 'px' :'0px'}">{{translation.definition}}</pre>
+  <pre [@slideUpDown]="translation.isOpen ? 'open' : 'closed'">{{translation.definition}}</pre>
 </div>
 

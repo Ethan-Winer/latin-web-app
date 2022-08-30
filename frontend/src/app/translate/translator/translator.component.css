@@ -46,6 +46,7 @@ form {
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
+  overflow-y: hidden;
 
   background-color: #3e3c42;
 }
@@ -69,7 +70,7 @@ form {
   opacity: 0;
 }
 
-@media screen and (max-height: 720px) {
+@media (max-height: 720px) or (max-width: 500px) {
   input {
     width: 120px;
 

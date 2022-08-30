@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// import { TranslatorPageComponent } from './translator-page/translator-page.component';
-// import { GuidePageComponent } from './guide-page/guide-page.component';
-
 const routes: Routes = [
   { path: 'guide', loadChildren: () => import('./guide/guide.module').then(m => m.GuideModule) },
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },

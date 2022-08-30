@@ -30,7 +30,7 @@ import { Translation } from '../translation/translation.model';
       transition(':leave', [
         animate('500ms ease',
           keyframes([
-            style({ transform: 'scale(1)', margin: '*' }),
+            style({ transform: 'scale(1)', margin: '*', color: 'rgba(0, 0, 0, 0)' }),
             style({ opacity: 0, transform: 'scale(0.4)' }),
             style({ height: 0, margin: 0 })
           ])

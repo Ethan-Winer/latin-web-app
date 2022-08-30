@@ -41,18 +41,16 @@ pre {
   overflow-y: hidden;
   overflow-wrap: break-word;
   white-space: pre-wrap;
-
   font-size: 16px;
-
-  transition: height 200ms ease-out;
 }
 
 .container {
   border-radius: 20px;
   padding: 10px;
+  /* margin: 10px; */
 }
 
-@media (max-height: 720px) {
+@media (max-height: 720px) or (max-width: 500px) {
   h2 {
     font-size: 22px;
   }
@@ -72,7 +70,6 @@ pre {
 
   pre {
     max-width: 500px;
-    @Input() dragging: boolean=false;
     font-size: 13px;
     line-height: 14px;
   }

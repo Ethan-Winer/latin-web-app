@@ -8,7 +8,7 @@ import { Translation } from './translation/translation.model'
 })
 export class TranslateService {
   latinTranslations: Translation[] = [];
-  englishTranslations: Translation[] = [new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true), new Translation('jfkdlsjfklsda', 'djfklasjfkldasjlk', true),];
+  englishTranslations: Translation[] = [new Translation('test', 'teaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\nst', true), new Translation('test', 'test', true)];
 
   private _showTranslationButtons = true;
 

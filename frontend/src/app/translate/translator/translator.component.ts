@@ -66,6 +66,9 @@ export class TranslatorComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
+    if (form.value['text'] === undefined) {
+      return;
+    }
     this.translateService.translate(form.value['text'], this.translateTo)
     form.controls['text'].setValue('');
   }

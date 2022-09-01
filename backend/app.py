@@ -3,40 +3,46 @@ from flask import Flask, jsonify, request
 import json
 import subprocess
 import os
+import time
 
-def check_for_valid_request(data):
-  if type(data) != list:
+def get_body_and_validate(request):
+  try:
+    body = json.loads(request.get_data())
+  except ValueError:
     return False
 
-  elif 'words' not in data:
+  if len(body.keys()) == 0 or 'words' != list(body.keys())[0]:
     return False
-  elif len(data['words']) == 0:
+  elif len(body['words']) == 0:
     return False
   else:
-    for word in data['words']:
+    for word in body['words']:
       if not word.isalpha():
         return False
-    return True
+    return body
 
 app = Flask(__name__)
+
 @app.route('/translate-to-latin', methods=['POST'])
 def translate_to_latin():
-  data = json.loads(request.get_data())
+  body = get_body_and_validate(request)
+  if not body:
+    return 'bad request'
+  
   translations = []
-  for word in data ['words']:
-    if not word.isalpha():
-      return 'bad request'
+  for word in body['words']:
     translation= subprocess.getoutput('./words ~E ' + word)
     translations.append(translation)
   return jsonify({'translationList': translations})
 
 @app.route('/translate-to-english', methods=['POST'])
 def translate_to_english():
-  data = json.loads(request.get_data())
+  body = get_body_and_validate(request)
+  if not body:
+    return 'bad request'
+
   translations=[]
-  for word in data['words']:
-    if not word.isalpha():
-      return 'bad request'
+  for word in body['words']:
     translation = subprocess.getoutput('./words ' + word)
     translations.append(translation)
   return jsonify({'translationList': translations})

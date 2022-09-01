@@ -8,7 +8,7 @@ import { Translation } from './translation/translation.model'
 })
 export class TranslateService {
   latinTranslations: Translation[] = [];
-  englishTranslations: Translation[] = [new Translation('test', 'test', true)];
+  englishTranslations: Translation[] = [];
   constructor(private http: HttpClient) { }
 
   translate(formText: string, translateTo: string) {
@@ -54,7 +54,6 @@ export class TranslateService {
       body += '"' + words[i] + '",';
     }
     body += '"' + words[words.length - 1] + '"]}'
-    console.log(body);
     return this.http.post('/translate-to-' + translateTo, body);
   }
 }

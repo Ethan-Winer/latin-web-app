@@ -81,7 +81,10 @@ export class TranslatorComponent implements OnInit {
     moveItemInArray(this.translations, event.previousIndex, event.currentIndex);
   }
 
+
+  //checks the text in an input box is greater than 
+  //zero and only has letters a-z and macron vowels
   check() {
-    this.invalidInput = this.inputText.length > 0 && !/^[A-Za-z\s,]+$/.test(this.inputText)
+    this.invalidInput = this.inputText.length > 0 && !/^[A-Za-zĀĒĪŌŪāēīōū\s]+$/.test(this.inputText);
   }
 }

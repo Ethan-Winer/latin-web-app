@@ -37,6 +37,21 @@ export class TranslateService {
         words.push(tempWord)
         tempWord = '';
       }
+      else if (char === 'ā') {
+        tempWord += 'a';
+      }
+      else if (char === 'ē') {
+        tempWord += 'e';
+      }
+      else if (char === 'ī') {
+        tempWord += 'i';
+      }
+      else if (char === 'ō') {
+        tempWord += 'o';
+      }
+      else if (char === 'ū') {
+        tempWord += 'u';
+      }
       else {
         tempWord += char;
       }

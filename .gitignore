@@ -5,3 +5,4 @@ node_modules
 venv
 cache
 dist
+package-lock.json

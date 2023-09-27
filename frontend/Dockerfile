@@ -1,6 +1,12 @@
-FROM nginx:1.18.0
-RUN mkdir /app
+FROM node:18.16.0 as node
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build --prod
 
-COPY /dist/frontend /app
+FROM nginx:1.18.0
+
+COPY --from=node /app/dist/frontend /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 8080:8080
